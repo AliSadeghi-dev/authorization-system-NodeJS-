@@ -5,10 +5,7 @@ const { AllRoutes } = require("./router/index.routes");
 const { notFound, errorHandler } = require("./utils/errorHandler");
 
 const app = express();
-mongoose
-  .connect("mongodb://localhost:27017/auth",(err)=>{
-    console.log(err? err.message : "connected to db");
-  })
+
 dbConnect();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
